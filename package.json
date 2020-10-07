@@ -1,0 +1,16 @@
+{
+  "name": "shopping-plan-node-express",
+  "version": "1.0.0",
+  "description": "This project is a continuing developement of a web app started as plain js and now being expanded using node and express.",
+  "main": "app.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wjb313/shopping-plan-node-express.git"
+  },
+  "keywords": [],
+  "author": "wjb",
+  "license": "Unlicense",
+  "dependencies": {
+  }
+}
