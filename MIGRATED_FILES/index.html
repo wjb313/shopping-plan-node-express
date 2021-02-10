@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>ShopPlan</title>
+
+    <meta
+      name="description"
+      content="This project is an app that helps assist in the process of amassing a grocery/household staples list via a weekly menu plan."
+    />
+    <meta name="author" content="wjb" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="./icons/favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="styles/style.css"
+      media="screen"
+    />
+
+    <script defer src="scripts/main.js"></script>
+  </head>
+  <body>
+    <main>
+      <!-- THIS IS WEHRE THE DINNER MENU PLANNING PAGE BEGINS -->
+      <div class="dmpContainer" data-js-dmp-display>
+        <!-- HEADER AND NAV FOR DMP PAGE -->
+        <div class="dmpContainerHeader">
+          <header data-js-dmp-header>
+            <h1 class="pageHeader">Dinner Plan</h1>
+            <!-- DMP NAVIGATION LINKS -->
+            <nav>
+              <ul class="navList" id="testItem">
+                <li class="navListItem" data-js-nav-to-dinner tabindex="0">
+                  Dinner Plan
+                </li>
+                <li
+                  class="navListItem"
+                  id="navListSeparator"
+                  data-js-nav-to-shopping-list
+                  tabindex="0"
+                >
+                  Shopping List
+                </li>
+              </ul>
+            </nav>
+          </header>
+        </div>
+        <!-- dinnerWrapper ==> THE GRID STRUCTURE FOR DMP PAGE -->
+        <div class="dinnerWrapper">
+          <!-- DAYS OF THE WEEK CONTENT BEGINS -->
+          <div class="daysOfTheWeek dotwToolTip" data-js-dotw="day1"></div>
+          <div class="daysOfTheWeek dotwToolTip" data-js-dotw="day2"></div>
+          <div class="daysOfTheWeek dotwToolTip" data-js-dotw="day3"></div>
+          <div class="daysOfTheWeek dotwToolTip" data-js-dotw="day4"></div>
+          <div class="daysOfTheWeek dotwToolTip" data-js-dotw="day5"></div>
+          <div class="daysOfTheWeek dotwToolTip" data-js-dotw="day6"></div>
+          <div class="daysOfTheWeek dotwToolTip" data-js-dotw="day7"></div>
+
+          <!-- DMP MENU ITEM CONTENT BEGINS-->
+          <div class="menuBox" data-js-menu-box-1 data-js-droppable="day1">
+            <div class="listContainer">
+              <div class="allMenuItems mainDish" data-js-main="day1"></div>
+              <!-- LIST OF MENU ITEMS - DAY 1 -->
+              <div>
+                <ul class="sidesList">
+                  <li
+                    class="allMenuItems sidesListItems"
+                    data-js-side1="day1"
+                  ></li>
+                  <li
+                    class="allMenuItems sidesListItems"
+                    data-js-side2="day1"
+                  ></li>
+                  <li
+                    class="allMenuItems sidesListItems"
+                    data-js-other="day1"
+                  ></li>
+                </ul>
+              </div>
+            </div>
+            <!-- CONTAINER FOR NOTES LINK, EDIT BTN, AND DnD HANDLE - DAY 1 -->
+            <div class="notesAndEdit">
+              <div class="notesAndDrag">
+                <div
+                  class="notesContainer"
+                  data-js-edit-notes="day1"
+                  tabindex="0"
+                >
+                  Notes<span
+                    class="tooltiptext allMenuItems"
+                    data-js-notes-span="day1"
+                  ></span>
+                </div>
+                <div>
+                  <img
+                    src="./icons/move.png"
+                    alt="drag and drop icon"
+                    class="dndIcon"
+                    data-js-draggable="day1"
+                    draggable="true"
+                  />
+                </div>
+              </div>
+              <div>
+                <button class="editBtn" data-js-edit-menu="day1"></button>
+              </div>
+            </div>
+          </div>
+          <div class="menuBox" data-js-menu-box-2 data-js-droppable="day2">
+            <div class="listContainer">
+              <div class="allMenuItems mainDish" data-js-main="day2"></div>
+              <!-- LIST OF MENU ITEMS - DAY 2 -->
+              <div>
+                <ul class="sidesList">
+                  <li
+                    class="allMenuItems sidesListItems"
+                    data-js-side1="day2"
+                  ></li>
+                  <li
+                    class="allMenuItems sidesListItems"
+                    data-js-side2="day2"
+                  ></li>
+                  <li
+                    class="allMenuItems sidesListItems"
+                    data-js-other="day2"
+                  ></li>
+                </ul>
+              </div>
+            </div>
+            <!-- CONTAINER FOR NOTES LINK, EDIT BTN, AND DnD HANDLE - DAY 2 -->
+            <div class="notesAndEdit">
+              <div class="notesAndDrag">
+                <div
+                  class="notesContainer"
+                  data-js-edit-notes="day2"
+                  tabindex="0"
+                >
+                  Notes<span
+                    class="tooltiptext allMenuItems"
+                    data-js-notes-span="day2"
+                  ></span>
+                </div>
+                <div>
+                  <img
+                    src="./icons/move.png"
+                    alt="drag and drop icon"
+                    class="dndIcon"
+                    data-js-draggable="day2"
+                    draggable="true"
+                  />
+                </div>
+              </div>
+              <div>
+                <button class="editBtn" data-js-edit-menu="day2"></button>
+              </div>
+            </div>
+          </div>
+          <div class="menuBox" data-js-menu-box-3 data-js-droppable="day3">
+            <div class="listContainer">
+              <div class="allMenuItems mainDish" data-js-main="day3"></div>
+              <!-- LIST OF MENU ITEMS - DAY 3 -->
+              <div>
+                <ul class="sidesList">
+                  <li
+                    class="allMenuItems sidesListItems"
+                    data-js-side1="day3"
+                  ></li>
+                  <li
+                    class="allMenuItems sidesListItems"
+                    data-js-side2="day3"
+                  ></li>
+                  <li
+                    class="allMenuItems sidesListItems"
+                    data-js-other="day3"
+                  ></li>
+                </ul>
+              </div>
+            </div>
+            <!-- CONTAINER FOR NOTES LINK, EDIT BTN, AND DnD HANDLE - DAY 3 -->
+            <div class="notesAndEdit">
+              <div class="notesAndDrag">
+                <div
+                  class="notesContainer"
+                  data-js-edit-notes="day3"
+                  tabindex="0"
+                >
+                  Notes<span
+                    class="tooltiptext allMenuItems"
+                    data-js-notes-span="day3"
+                  ></span>
+                </div>
+                <div>
+                  <img
+                    src="./icons/move.png"
+                    alt="drag and drop icon"
+                    class="dndIcon"
+                    data-js-draggable="day3"
+                    draggable="true"
+                  />
+                </div>
+              </div>
+              <div>
+                <button class="editBtn" data-js-edit-menu="day3"></button>
+              </div>
+            </div>
+          </div>
+          <div class="menuBox" data-js-menu-box-4 data-js-droppable="day4">
+            <div class="listContainer">
+              <div class="allMenuItems mainDish" data-js-main="day4"></div>
+              <!-- LIST OF MENU ITEMS - DAY 4 -->
+              <div>
+                <ul class="sidesList">
+                  <li
+                    class="allMenuItems sidesListItems"
+                    data-js-side1="day4"
+                  ></li>
+                  <li
+                    class="allMenuItems sidesListItems"
+                    data-js-side2="day4"
+                  ></li>
+                  <li
+                    class="allMenuItems sidesListItems"
+                    data-js-other="day4"
+                  ></li>
+                </ul>
+              </div>
+            </div>
+            <!-- CONTAINER FOR NOTES LINK, EDIT BTN, AND DnD HANDLE - DAY 4 -->
+            <div class="notesAndEdit">
+              <div class="notesAndDrag">
+                <div
+                  class="notesContainer"
+                  data-js-edit-notes="day4"
+                  tabindex="0"
+                >
+                  Notes<span
+                    class="tooltiptext allMenuItems"
+                    data-js-notes-span="day4"
+                  ></span>
+                </div>
+                <div>
+                  <img
+                    src="./icons/move.png"
+                    alt="drag and drop icon"
+                    class="dndIcon"
+                    data-js-draggable="day4"
+                    draggable="true"
+                  />
+                </div>
+              </div>
+              <div>
+                <button class="editBtn" data-js-edit-menu="day4"></button>
+              </div>
+            </div>
+          </div>
+          <div class="menuBox" data-js-menu-box-5 data-js-droppable="day5">
+            <div class="listContainer">
+              <div class="allMenuItems mainDish" data-js-main="day5"></div>
+              <!-- LIST OF MENU ITEMS - DAY 5 -->
+              <div>
+                <ul class="sidesList">
+                  <li
+                    class="allMenuItems sidesListItems"
+                    data-js-side1="day5"
+                  ></li>
+                  <li
+                    class="allMenuItems sidesListItems"
+                    data-js-side2="day5"
+                  ></li>
+                  <li
+                    class="allMenuItems sidesListItems"
+                    data-js-other="day5"
+                  ></li>
+                </ul>
+              </div>
+            </div>
+            <!-- CONTAINER FOR NOTES LINK, EDIT BTN, AND DnD HANDLE - DAY 5 -->
+            <div class="notesAndEdit">
+              <div class="notesAndDrag">
+                <div
+                  class="notesContainer"
+                  data-js-edit-notes="day5"
+                  tabindex="0"
+                >
+                  Notes<span
+                    class="tooltiptext allMenuItems"
+                    data-js-notes-span="day5"
+                  ></span>
+                </div>
+                <div>
+                  <img
+                    src="./icons/move.png"
+                    alt="drag and drop icon"
+                    class="dndIcon"
+                    data-js-draggable="day5"
+                    draggable="true"
+                  />
+                </div>
+              </div>
+              <div>
+                <button class="editBtn" data-js-edit-menu="day5"></button>
+              </div>
+            </div>
+          </div>
+          <div class="menuBox" data-js-menu-box-6 data-js-droppable="day6">
+            <div class="listContainer">
+              <div class="allMenuItems mainDish" data-js-main="day6"></div>
+              <!-- LIST OF MENU ITEMS - DAY 6 -->
+              <div>
+                <ul class="sidesList">
+                  <li
+                    class="allMenuItems sidesListItems"
+                    data-js-side1="day6"
+                  ></li>
+                  <li
+                    class="allMenuItems sidesListItems"
+                    data-js-side2="day6"
+                  ></li>
+                  <li
+                    class="allMenuItems sidesListItems"
+                    data-js-other="day6"
+                  ></li>
+                </ul>
+              </div>
+            </div>
+            <!-- CONTAINER FOR NOTES LINK, EDIT BTN, AND DnD HANDLE - DAY 6 -->
+            <div class="notesAndEdit">
+              <div class="notesAndDrag">
+                <div
+                  class="notesContainer"
+                  data-js-edit-notes="day6"
+                  tabindex="0"
+                >
+                  Notes<span
+                    class="tooltiptext allMenuItems"
+                    data-js-notes-span="day6"
+                  ></span>
+                </div>
+                <div>
+                  <img
+                    src="./icons/move.png"
+                    alt="drag and drop icon"
+                    class="dndIcon"
+                    data-js-draggable="day6"
+                    draggable="true"
+                  />
+                </div>
+              </div>
+              <div>
+                <button class="editBtn" data-js-edit-menu="day6"></button>
+              </div>
+            </div>
+          </div>
+          <div class="menuBox" data-js-menu-box-7 data-js-droppable="day7">
+            <div class="listContainer">
+              <div class="allMenuItems mainDish" data-js-main="day7"></div>
+              <!-- LIST OF MENU ITEMS - DAY 7 -->
+              <div>
+                <ul class="sidesList">
+                  <li
+                    class="allMenuItems sidesListItems"
+                    data-js-side1="day7"
+                  ></li>
+                  <li
+                    class="allMenuItems sidesListItems"
+                    data-js-side2="day7"
+                  ></li>
+                  <li
+                    class="allMenuItems sidesListItems"
+                    data-js-other="day7"
+                  ></li>
+                </ul>
+              </div>
+            </div>
+            <!-- CONTAINER FOR NOTES LINK, EDIT BTN, AND DnD HANDLE - DAY 7 -->
+            <div class="notesAndEdit">
+              <div class="notesAndDrag">
+                <div
+                  class="notesContainer"
+                  data-js-edit-notes="day7"
+                  tabindex="0"
+                >
+                  Notes<span
+                    class="tooltiptext allMenuItems"
+                    data-js-notes-span="day7"
+                  ></span>
+                </div>
+                <div>
+                  <img
+                    src="./icons/move.png"
+                    alt="drag and drop icon"
+                    class="dndIcon"
+                    data-js-draggable="day7"
+                    draggable="true"
+                  />
+                </div>
+              </div>
+              <div>
+                <button class="editBtn" data-js-edit-menu="day7"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- DMP FOOTER CONTAINER - BTNS TO CHANGE START DAY AND CLEAR ITEMS -->
+        <div class="dmpContainerFooter">
+          <footer class="dmpFooterBtn">
+            <button class="btn" data-js-btn-reorder>Change Starting Day</button>
+            <button class="btn" data-js-btn-clear>Clear Menu Items</button>
+          </footer>
+        </div>
+      </div>
+      <!-- THIS IS WEHRE THE DINNER MENU PLANNING PAGE ENDS -->
+      <!-- THIS IS WHERE THE SHOPPLING LIST PAGE BEGINS -->
+      <div class="sliContainer" data-js-sli-display>
+        <!-- HEADER AND NAV FOR SLI PAGE -->
+        <div class="sliContainerHeader">
+          <header data-js-sli-header>
+            <h1 class="pageHeader">Shopping List</h1>
+            <!-- SLI NAVIGATION LINKS -->
+            <nav>
+              <ul class="navList" id="testItem">
+                <li class="navListItem" data-js-nav-to-dinner tabindex="0">
+                  Dinner Plan
+                </li>
+                <li
+                  class="navListItem"
+                  id="navListSeparator"
+                  data-js-nav-to-shopping-list
+                  tabindex="0"
+                >
+                  Shopping List
+                </li>
+              </ul>
+            </nav>
+          </header>
+        </div>
+        <div class="sliContainerSubHeader">
+          <header>
+            <p class="listCount" data-js-list-count></p>
+            <button class="btn" data-js-btn-add-item>Add Item</button>
+          </header>
+        </div>
+
+        <!-- listWrapper ==> ALL NEW LIST ITEMS ARE APPENDED UNDER THIS DIV -->
+        <div class="listWrapper" data-js-list-body></div>
+        <!-- SLI FOOTER CONTAINER - BTNS TO CLEAR TASKS -->
+        <div class="sliContainerFooter">
+          <footer class="sliFooterBtn">
+            <button class="btn btnDelete" data-js-btn-clear-completed>
+              Clear Completed Items
+            </button>
+            <button class="btn btnDelete" data-js-btn-clear-all>
+              Clear All Items
+            </button>
+          </footer>
+        </div>
+      </div>
+      <!-- THIS IS WHERE THE SHOPPLING LIST PAGE ENDS -->
+    </main>
+
+    <!-- ALL MODAL BOX LAYOUT BEGINS HERE-->
+
+    <!-- **** DOTW REORDER MODAL **** -->
+    <div class="modal" data-js-reorder-modal>
+      <!-- Modal content -->
+      <div class="modalContent modalContentCentered">
+        <header class="modalContentHeader">
+          <h2>Choose start day</h2>
+        </header>
+        <span class="clickableDays">Saturday</span>
+        <span class="clickableDays">Sunday</span>
+        <span class="clickableDays">Monday</span>
+        <span class="clickableDays">Tuesday</span>
+        <span class="clickableDays">Wednesday</span>
+        <span class="clickableDays">Thursday</span>
+        <span class="clickableDays">Friday</span>
+        <footer class="modalContentFooter">
+          <button class="modalBtn" data-js-reorder-modal-close>Close</button>
+        </footer>
+      </div>
+    </div>
+    <!-- **** CLEAR ALL MENU ITEMS MODAL **** -->
+    <div class="modal" data-js-clear-modal>
+      <!-- Modal content -->
+      <div class="modalContent modalContentCentered">
+        <header class="modalContentHeader">
+          <h2>Clear Menu</h2>
+        </header>
+        <p>You Sure?!?</p>
+        <footer class="modalContentFooter">
+          <button class="modalBtn" data-js-clear-yes>Yes</button>
+          <button class="modalBtn" data-js-clear-no>No</button>
+        </footer>
+      </div>
+    </div>
+    <!-- **** SHOPPING LIST NEW ITEM MODAL **** -->
+    <div class="modal" data-js-add-item-modal>
+      <!-- Modal content -->
+      <div class="modalContent">
+        <header class="modalContentHeader">
+          <h2>New Item</h2>
+        </header>
+        <form action="" class="modalForm" data-js-add-item-form="new">
+          <label for="itemName" class="modalFormLabel">Name</label>
+          <input
+            type="text"
+            class="modalFormInput"
+            id="itemName"
+            data-js-add-item-name
+          />
+          <label for="itemType" class="modalFormLabel">Type</label>
+          <select class="modalFormInput" id="itemType" data-js-add-item-type>
+            <option value=""></option>
+            <option value="vegetable">Vegetable</option>
+            <option value="fruit">Fruit</option>
+            <option value="refrigerated">Refrigerated</option>
+            <option value="drygoods">Dry Goods</option>
+            <option value="bakery">Bakery</option>
+            <option value="meat">Meat</option>
+            <option value="fish">Fish</option>
+            <option value="miscellaneous">Miscellaneous</option>
+          </select>
+          <label for="itemQuantity" class="modalFormLabel">Quantity</label>
+          <input
+            type="number"
+            class="modalFormInput"
+            id="itemQuantity"
+            value="1"
+            min="1"
+            data-js-add-item-quantity
+          />
+          <label for="itemUnits" class="modalFormLabel">Units (optional)</label>
+          <select class="modalFormInput" id="itemUnits" data-js-add-item-units>
+            Units
+            <option value=""></option>
+            <option value="teaspoon">tsp</option>
+            <option value="tablespoon">tbsp</option>
+            <option value="fluid ounce">fl oz</option>
+            <option value="cup">c</option>
+            <option value="gallon">gal</option>
+            <option value="ounce">oz</option>
+            <option value="pound">lb</option>
+            <option value="bag">bag</option>
+            <option value="box">box</option>
+            <option value="can">can</option>
+            <option value="jar">jar</option>
+          </select>
+          <footer class="modalContentFooter">
+            <button class="modalBtn">Enter</button>
+            <button class="modalBtn" data-js-add-item-close>Close</button>
+          </footer>
+        </form>
+      </div>
+    </div>
+    <!-- **** DINNER MENU PLAN (DMP) MODAL **** -->
+    <div class="modal" id="dmpModal" data-js-dmp-modal tabindex="-1">
+      <div class="modalContent">
+        <header class="modalContentHeader">
+          <h2 data-js-dmp-modal-header></h2>
+        </header>
+        <form action="" class="modalForm">
+          <label class="dmpModalLabel">Main</label>
+          <input type="text" class="modalFormInput" data-js-input-one="main" />
+          <p id="mainDishHint" class="inputHint">Enter a main dish here</p>
+          <label class="dmpModalLabel">Side</label>
+          <input type="text" class="modalFormInput" data-js-input-two="side1" />
+          <p id="mainDishHint" class="inputHint">Enter a side dish here</p>
+          <label class="dmpModalLabel">Side</label>
+          <input
+            type="text"
+            class="modalFormInput"
+            data-js-input-three="side2"
+          />
+          <p id="mainDishHint" class="inputHint">
+            Enter another side here, if you like
+          </p>
+          <label class="dmpModalLabel">Other</label>
+          <input
+            type="text"
+            class="modalFormInput"
+            data-js-input-four="other"
+          />
+          <p id="mainDishHint" class="inputHint">
+            Enter miscellaneous items here, if you have any
+          </p>
+          <label class="dmpModalLabel">Notes</label>
+          <textarea
+            name="Notes"
+            rows="3"
+            cols="30"
+            class="modalFormInput"
+            data-js-input-five="notes"
+          ></textarea>
+          <p id="mainDishHint" class="inputHint">
+            Enter any notes you may want
+          </p>
+          <footer class="modalContentFooter">
+            <button class="modalBtn" data-js-new-item-submit>Enter</button>
+            <button class="modalBtn" data-js-dmp-modal-close>Close</button>
+          </footer>
+        </form>
+      </div>
+    </div>
+    <!-- **** DINNER MENU PLAN (DMP) NOTES MODAL **** -->
+    <div class="modal" data-js-notes-modal>
+      <div class="modalContent">
+        <header class="modalContentHeader">
+          <h2 data-js-dmp-notes-modal-header></h2>
+        </header>
+        <form action="" class="modalForm">
+          <textarea
+            name="Notes"
+            rows="3"
+            cols="30"
+            class="modalFormInput"
+            data-js-input-notes
+          ></textarea>
+
+          <p id="mainDishHint" class="inputHint">
+            Enter any notes you may want
+          </p>
+          <footer class="modalContentFooter">
+            <button class="modalBtn" data-js-notes-submit>Enter</button>
+            <button class="modalBtn" data-js-notes-modal-close>Close</button>
+          </footer>
+        </form>
+      </div>
+    </div>
+    <!-- **** CLEAR COMPLETED SHOPPING LIST ITEMS MODAL **** -->
+    <div class="modal" data-js-clear-completed-modal>
+      <!-- Modal content -->
+      <div class="modalContent modalContentCentered">
+        <header class="modalContentHeader">
+          <h2>Clear Completed Items</h2>
+        </header>
+        <p>You Sure?!?</p>
+        <footer class="modalContentFooter">
+          <button class="modalBtn" data-js-clear-completed-yes>Yes</button>
+          <button class="modalBtn" data-js-clear-completed-no>No</button>
+        </footer>
+      </div>
+    </div>
+    <!-- **** CLEAR ALL SHOPPING LIST ITEMS MODAL **** -->
+    <div class="modal" data-js-clear-all-modal>
+      <!-- Modal content -->
+      <div class="modalContent modalContentCentered">
+        <header class="modalContentHeader">
+          <h2>Clear All Items</h2>
+        </header>
+        <p>You Sure?!?</p>
+        <footer class="modalContentFooter">
+          <button class="modalBtn" data-js-clear-all-yes>Yes</button>
+          <button class="modalBtn" data-js-clear-all-no>No</button>
+        </footer>
+      </div>
+    </div>
+    <!-- **** NO SHOPPING LIST ITEMS TO CLEAR MODAL **** -->
+    <div class="modal" data-js-no-items-modal>
+      <!-- Modal content -->
+      <div class="modalContent modalContentCentered">
+        <!-- <header class="modalContentHeader">
+          <h2>There are no items to clear</h2>
+        </header> -->
+        <p>No items to clear</p>
+        <footer class="modalContentFooter">
+          <button class="modalBtn" data-js-no-items-close>OK</button>
+        </footer>
+      </div>
+    </div>
+    <template id="listItemTemplate">
+      <div class="listItem">
+        <input type="checkbox" class="sliCheckbox" />
+        <label>
+          <span class="custom-checkbox"></span>
+        </label>
+        <div class="sliEdit" data-js-sli-edit>Edit</div>
+      </div>
+    </template>
+  </body>
+</html>

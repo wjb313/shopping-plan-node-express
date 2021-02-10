@@ -1,0 +1,704 @@
+/* General baseline settings*/
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@viewport {
+  width: device-width;
+  zoom: 1;
+}
+
+/* Define standard HTML element settings */
+html {
+  font-size: 62.5%; /* Sets font size for document at 10px */
+  background: var(--primary-bkgd-color); /* Sets all background to white */
+  --primary-bkgd-color: white;
+  --secondary-bkgd-color: rgba(107, 122, 102, 1);
+  --modal-opaque-bkgd-color: rgba(255, 2, 2, 0.4);
+  --modal-input-font-color: rgb(206, 0, 0);
+  --primary-font-color: rgba(0, 0, 0, 0.7);
+  --invert-font-color: white;
+  --interactive-hover-color: rgba(206, 0, 0, 1);
+  --primary-container-border-color: rgba(134, 154, 128, 0.5);
+  --primary-container-shadow-color: rgba(134, 154, 128, 0.25);
+}
+
+body,
+input,
+button,
+textarea {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1rem; /* Sets font size to 10px */
+  color: var(--primary-font-color);
+}
+
+main,
+.signIn {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+footer {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* ====================================
+   ====================================
+   DEFINE CONTENT IN ORDER OF APPEARANCE
+   ====================================
+   ==================================== */
+
+/* NAV BAR LAYOUT AND STYLING */
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  font-size: 1.5rem;
+}
+
+.navListItem {
+  padding-left: 20px;
+  margin: 10px;
+}
+
+.navListItem:hover,
+.navListItem:focus {
+  cursor: pointer;
+  outline: none;
+  color: var(--interactive-hover-color);
+}
+
+#navListSeparator {
+  border-left: 2px solid black;
+}
+
+/* FORMATTING DINNER PLAN AND SHOPPING LIST HEADER TEXT */
+.pageHeader {
+  font-size: 3rem;
+}
+
+/* BUTTONS IN DMP HEADER --> START DAY AND CLEAR ITEMS */
+/* ALSO CONTAINER THAT STYLES THOSE BUTTONS POSITIONING */
+/* *** LIKELY GOING TO CHANGE BUT CURRENTLY BUTTONS ON SLI MODAL, TOO */
+/* .dmpHeaderBtn {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 1.5rem;
+  width: 30vw;
+} */
+
+.btn {
+  cursor: pointer;
+  background: 0;
+  border: 0;
+  padding: 0;
+  font-size: 1.5rem;
+
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.btn:hover,
+.btn:focus {
+  cursor: pointer;
+  outline: none;
+  background: 0;
+  border: 0;
+  padding: 0;
+  color: var(--interactive-hover-color);
+}
+
+/* ===========================
+   ===========================
+      SIGN IN FORMATTING
+   ===========================
+   =========================== */
+.signInBkgd {
+  background-color: var(--secondary-bkgd-color);
+}
+.signInContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 35%;
+  height: 42%;
+  border: 1px var(--primary-container-border-color) solid;
+  border-radius: 5px;
+  box-shadow: 5px 5px 1px 0px var(--primary-container-shadow-color);
+  background-color: var(--primary-bkgd-color);
+}
+
+.signInPageHeader {
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+.signInLabels {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.signInFields {
+  display: flex;
+  justify-content: center;
+}
+
+.signInPageFields {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+  width: 100%;
+}
+
+.username {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 10px;
+  border: 1px blue solid;
+}
+
+.password {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 10px;
+  border: 1px blue solid;
+}
+
+.signInForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+/* ===========================
+   ===========================
+   DINNER MENU PLAN FORMATTING
+   ===========================
+   =========================== */
+
+/* START NEW FORMATTING - FLEXBOX CONTAINER FOR GRID */
+.dmpContainer,
+.sliContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 65%;
+  height: 90%;
+  border: 1px var(--primary-container-border-color) solid;
+  border-radius: 5px;
+  background: var(--primary-bkgd-color);
+  box-shadow: 5px 5px 1px 0px var(--primary-container-shadow-color);
+}
+
+.dmpContainerHeader,
+.sliContainerHeader {
+  width: 90%;
+}
+
+.sliContainerSubHeader {
+  width: 70%;
+  margin: 5px 0 20px 0;
+}
+
+.dmpContainerFooter,
+.sliContainerFooter {
+  width: 90%;
+}
+
+/* GRID LAYOUT --> DAYS OF THE WEEK AND DMP CONTENT */
+/* GRID CONTAINER FOR DMP */
+.dinnerWrapper {
+  display: grid;
+  grid-template-columns: 25% 75%;
+  grid-template-rows: repeat(7, minmax(50px, 1fr));
+  grid-auto-flow: column;
+  grid-area: menuGrid;
+  justify-content: space-between;
+  width: 90%;
+  height: 85%;
+}
+
+/* DAYS OF THE WEEK (DOTW) */
+.daysOfTheWeek {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--secondary-bkgd-color);
+  color: var(--invert-font-color);
+  border: 1px var(--primary-container-shadow-color) solid;
+  font-size: 5rem;
+  border-top-left-radius: 7.5px;
+  border-bottom-left-radius: 7.5px;
+  position: relative;
+}
+
+/* HOVER OVER DOTW LETTERS FOR FULL DAY NAME */
+.dotwToolTip .tooltiptext {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  height: 100%;
+  width: 100%;
+  background: var(--secondary-bkgd-color);
+  color: var(--invert-font-color);
+  text-align: center;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  padding: 5px;
+  font-size: 2.5rem;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  /* left: -60px; */
+}
+
+.dotwToolTip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.dotwToolTip:hover {
+  cursor: pointer;
+}
+
+/* CONTENTS OF EACH DOTW MENU BOX */
+.menuBox {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.25rem;
+  padding: 5px;
+  padding-left: 20px;
+  border: 1px var(--primary-container-shadow-color) solid;
+}
+
+.listContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 80%;
+}
+
+.mainDish {
+  font-size: 2.5rem;
+  border-bottom: 1px var(--primary-container-shadow-color) solid;
+}
+
+.sidesList {
+  display: flex;
+  padding-left: 5px;
+  justify-content: space-evenly;
+}
+
+.sidesListItems {
+  list-style: none;
+  font-size: 1.5rem;
+  width: 30%;
+}
+
+/* CONTAINER FORMATTING NOTES 'BUTTON', EDIT BUTTON, DRAG AND DROP HANDLE */
+.notesAndEdit {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.notesAndDrag {
+  display: flex;
+}
+
+/* DRAG AND DROP HANDLE ICON FORMATTING */
+.dndIconContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.dndIcon {
+  opacity: 0.7;
+  padding-left: 20px;
+}
+
+.dndIcon:hover {
+  opacity: 1;
+  cursor: move;
+}
+
+/* NOTES HOVER TOOLTIP POPUP */
+.notesContainer {
+  display: flex;
+  position: relative;
+  justify-content: flex-end;
+  font-weight: 700;
+  color: var(--secondary-bkgd-color);
+  /* visibility: hidden; */
+}
+
+.notesContainer:hover,
+.notesContainer:focus {
+  outline: none;
+  color: var(--interactive-hover-color);
+  cursor: pointer;
+}
+
+.notesContainer .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background: var(--secondary-bkgd-color);
+  color: var(--invert-font-color);
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  left: 50px;
+}
+
+.notesContainer:hover .tooltiptext {
+  visibility: visible;
+}
+
+/* ========================
+   ========================
+   SHOPPING LIST FORMATTING
+   ========================
+   ======================== */
+
+.listWrapper {
+  /* flex-direction: column;
+  justify-content: space-between; */
+  overflow-y: auto;
+  box-shadow: 1px 1px 2.5px 0px rgba(0, 0, 0, 0.25);
+  width: 90%;
+  height: 75%;
+}
+
+/* SHOPPING LIST CONTAINER (.sliContainer), SHOPPING LIST HEADER (.sliContainerHeader), AND SHOPPING LIST SUBHEADER (.sliContainerSubHeader) ARE ALL ABOVE (IN DMP SECTION) AS THEY SHARE DMP CONTAINER, HEADER, AND SUBHEADER SETTINGS */
+
+/* SLI 'ITEMS REMAINING' FORMATTING */
+.listCount {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* SLI LIST FORMATTING */
+.listItem {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sliEdit {
+  align-self: center;
+  font-size: 1.15rem;
+  padding: 0 10px 0 10px;
+}
+
+.sliEdit:hover,
+.sliEdit:focus {
+  cursor: pointer;
+  background: 0;
+  border: 0;
+  font-weight: 800;
+  color: var(--interactive-hover-color);
+}
+
+.listItem label {
+  display: inline-flex; /* INLINE-FLEX FORMATTING ==> CROSS-OUT LINE ONLY AS WIDE CONTENT */
+  align-items: center; /* ALIGNS CUSTOM CHEKCBOX WITH CONTENT VERTICALLY */
+  position: relative; /* CROSS-OUT LINE ==> CENTERED ON LIST ITEM CONTENT */
+  margin-top: 0.5em; /* SIZES CONTENT BOX - TOP */
+  margin-bottom: 0.5em; /* SIZES CONTENT BOX - BOTTOM */
+  padding-left: 1em; /* INDENT CONTENT */
+  font-size: 1.5rem;
+}
+
+/* HIDES STANDARD CHECKBOX FROM VIEW WHILE MAINTAINING POSITIONING */
+.sliCheckbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.sliCheckboxEven {
+  opacity: 0;
+  position: absolute;
+}
+
+/* CREATES AND STYLES CUSTOM CHECKBOX VISUAL */
+.custom-checkbox {
+  --sizer: 1em;
+
+  display: inline-block;
+  width: var(--sizer);
+  height: var(--sizer);
+  margin-right: var(--sizer);
+  cursor: pointer;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+
+  transform: scale(1);
+  transition: transform 200ms ease-in-out;
+}
+
+/* MODIFIES CUSTOM CHECKBOX WHEN HOVERING OVER THE LIST ITEM OR WHEN FOCUSED ON THE CHECKBOX  */
+.listItem:hover .custom-checkbox,
+.sliCheckbox:focus + label .custom-checkbox {
+  transform: scale(1.2);
+}
+
+/* MODIFIES CUSTOM CHECKBOX STYLING WHEN CHECKED */
+.sliCheckbox:checked + label .custom-checkbox {
+  background: var(--secondary-bkgd-color);
+  border: var(--secondary-bkgd-color);
+  box-shadow: inset 0 0 0 2px white;
+}
+
+.sliCheckbox:checked + label {
+  opacity: 0.5;
+}
+
+.sliCheckboxEven:focus + label .custom-checkbox {
+  transform: scale(1.2);
+  /* color: green; */
+}
+
+/* MODIFIES CUSTOM CHECKBOX STYLING WHEN CHECKED */
+.listItemEven:hover .custom-checkbox,
+.sliCheckboxEven:checked + label .custom-checkbox {
+  background: var(--primary-bkgd-color);
+  border: var(--primary-bkgd-color);
+  box-shadow: inset 0 0 0 2px var(--secondary-bkgd-color);
+}
+
+.sliCheckboxEven:checked + label {
+  opacity: 0.5;
+}
+
+/* CROSS-OUT LINE FOR COMPLETED ITEMS WHEN CHECKBOX CHECKED */
+.listItem label::after {
+  content: "";
+  position: absolute;
+  left: 3em;
+  right: 0;
+  height: 1.5px;
+  top: 50%;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 150ms ease-in-out;
+}
+
+.sliCheckbox:checked + label::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.sliCheckboxEven:checked + label::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ====================
+   ====================
+   MODAL BOX FORMATTING
+   ====================
+   ==================== */
+
+/* ALL MODAL BOXES LAYOUT */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 150px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background: var(--primary-font-color); /* Fallback color */
+  background: var(--modal-opaque-bkgd-color); /* Red w/ opacity */
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--primary-bkgd-color);
+  margin: auto;
+  padding: 20px;
+  border: 1px solid var(--primary-container-border-color);
+  width: 30%;
+  font-size: 2rem;
+  border-radius: 10px;
+}
+
+.modalContentHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: var(--primary-font-color);
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-bottom: 1px var(--primary-container-shadow-color) solid;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+}
+
+.modalContentFooter {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.modalForm {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-center;
+  margin: 0 5px 0 5px;
+}
+
+.modalFormInput {
+  padding: 5px;
+  background: 0;
+  border: 0;
+  border-bottom: 1px var(--primary-container-shadow-color) solid;
+  color: var(--modal-input-font-color);
+  font-size: 1.75rem;
+}
+
+.modalFormInput:focus {
+  outline: none;
+  padding: 5px;
+  background: 0;
+  border: 0;
+  border-bottom: 1px var(--primary-container-shadow-color) solid;
+}
+
+.modalFormLabel {
+  padding: 10px 0 0 0;
+  margin-top: 5px;
+}
+
+.modalBtn {
+  cursor: pointer;
+  background: 0;
+  border: 0;
+  padding: 0;
+  font-size: 1.5rem;
+  color: var(--primary-font-color);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.modalBtn:hover {
+  cursor: pointer;
+  background: 0;
+  border: 0;
+  padding: 0;
+  color: var(--interactive-hover-color);
+}
+
+.editBtn {
+  background: 0;
+  border: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 20px 0 0 10px;
+  color: var(--secondary-bkgd-color);
+}
+
+.editBtn:hover,
+.editBtn:focus {
+  outline: none;
+  color: var(--interactive-hover-color);
+  border: 0;
+  border-radius: 20px;
+  padding: 20px 0 0 10px;
+
+  cursor: pointer;
+}
+
+.editBtnDiv {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* MODAL BOX SPECIFIC LAYOUT */
+
+/* REORDER MODAL */
+.clickableDays:hover,
+.clickableDays:focus {
+  color: var(--interactive-hover-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* CENTER DOTW SELECTIONS IN MODAL CONTENT BOX */
+.modalContentCentered {
+  justify-content: center;
+  align-items: center;
+}
+
+/* CLEAR MODAL */
+
+/* DMP MODAL */
+#dmpModal {
+  padding-top: 80px;
+}
+
+/* DMP NOTES MODAL */
+
+/* SHOPPING LIST (SLI) MODAL */
+
+/* Shopping List New Item */
+
+/* .sliClose {
+  color: #aaaaaa;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.sliClose:hover,
+.sliClose:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+} */
+
+.inputHint {
+  font-size: 1.25rem;
+}

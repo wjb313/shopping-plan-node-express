@@ -1,0 +1,20 @@
+include header.pug
+
+body.signInBkgd
+  div.signIn
+    div.modalContent
+      div.modalContentHeader
+        h1
+          | ShopPlan
+      div
+        form.modalForm(action='#' method='POST')
+          label.modalFormLabel(for='username')
+            | Username
+          input.modalFormInput#username(type='text' name="username" required='required')
+          label.modalFormLabel(for='password')
+            | Password
+          input.modalFormInput#password(type='password' name="password" required='required')
+          div.modalContentFooter
+            span
+              button.btn
+                | Sign in

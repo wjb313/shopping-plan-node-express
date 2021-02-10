@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "This project is a continuing developement of a web app started as plain js and now being expanded using node and express.",
   "main": "app.js",
-  "scripts": {},
+  "scripts": {
+    "build": "postcss css/tailwind.css -o public/build/tailwind.css",
+    "start": "nodemon app.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/wjb313/shopping-plan-node-express.git"
@@ -12,5 +15,17 @@
   "author": "wjb",
   "license": "Unlicense",
   "dependencies": {
+    "async-redis": "^1.1.7",
+    "autoprefixer": "^10.2.4",
+    "bcrypt": "^5.0.0",
+    "connect-redis": "^5.1.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "postcss": "^8.2.5",
+    "postcss-cli": "^8.3.1",
+    "pug": "^3.0.0",
+    "redis": "^3.0.2",
+    "serve-favicon": "^2.5.0",
+    "tailwindcss": "^2.0.3"
   }
 }
