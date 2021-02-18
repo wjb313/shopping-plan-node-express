@@ -1,0 +1,28 @@
+html
+  head
+    title Shopping Plan App
+    link(rel='stylesheet', href='/static/css/style.css')
+
+    //- style
+    //-   include ../css/style.css
+    script(defer, src='/static/scripts/dashboard.js')
+
+body.signInBkgd
+  div.signIn
+    div.modalContent
+      div.modalContentHeader
+        h1
+          | Dashboard
+      div
+        div.modalContentFooter
+          span
+            button.btn(data-js-nav-to-dinner)
+              | Dinner Plan
+          span
+            button.btn(data-js-nav-to-shopping-list)
+              | Shopping List
+
+
+  //- script
+  //-   include ../scripts/dashboard.js
+

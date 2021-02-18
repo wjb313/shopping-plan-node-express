@@ -1,0 +1,17 @@
+html
+  head
+    title Shopping Plan App
+    link(rel='stylesheet', href='/static/css/style.css')
+    script(defer, src='/static/scripts/login.js')
+
+body.signInBkgd
+  div.signIn
+    div.modalContent
+      div.modalContentHeader
+        h1
+          | Thanks for using ShopPlan!!!
+      div
+        div.modalContentFooter
+          span
+            button.btn(data-js-nav-to-login)
+              | Return to Login

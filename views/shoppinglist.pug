@@ -1,0 +1,121 @@
+html
+  head
+    title Shopping Plan App
+    link(rel='stylesheet', href='/static/css/style.css')
+    script(defer, src='/static/scripts/dmp.js')
+
+main
+  // THIS IS WHERE THE SHOPPLING LIST PAGE BEGINS
+  .sliContainer(data-js-sli-display='')
+    // HEADER AND NAV FOR SLI PAGE
+    .sliContainerHeader
+      header(data-js-sli-header='')
+        h1.pageHeader Shopping List
+        // SLI NAVIGATION LINKS
+        nav
+          ul#testItem.navList
+            li.navListItem(data-js-nav-to-dinner='' tabindex='0')
+              | Dinner Plan
+            li#navListSeparator.navListItem(data-js-nav-to-shopping-list='' tabindex='0')
+              | Shopping List
+            li#navListSeparator.navListItem(data-js-nav-to-dashboard='' tabindex='0')
+              | Dashboard
+            li#navListSeparator.navListItem(data-js-nav-to-logout='' tabindex='0')
+              | Logout
+    .sliContainerSubHeader
+      header
+        p.listCount(data-js-list-count='')
+        button.btn(data-js-btn-add-item='') Add Item
+    // listWrapper ==> ALL NEW LIST ITEMS ARE APPENDED UNDER THIS DIV
+    .listWrapper(data-js-list-body='')
+    // SLI FOOTER CONTAINER - BTNS TO CLEAR TASKS
+    .sliContainerFooter
+      footer.sliFooterBtn
+        button.btn.btnDelete(data-js-btn-clear-completed='')
+          | Clear Completed Items
+        button.btn.btnDelete(data-js-btn-clear-all='')
+          | Clear All Items
+  // THIS IS WHERE THE SHOPPLING LIST PAGE ENDS
+
+// MODAL BOX LAYOUT BEGINS HERE
+// **** CLEAR COMPLETED SHOPPING LIST ITEMS MODAL ****
+.modal(data-js-clear-completed-modal='')
+  // Modal content
+  .modalContent.modalContentCentered
+    header.modalContentHeader
+      h2 Clear Completed Items
+    p You Sure?!?
+    footer.modalContentFooter
+      button.modalBtn(data-js-clear-completed-yes='') Yes
+      button.modalBtn(data-js-clear-completed-no='') No
+// **** CLEAR ALL SHOPPING LIST ITEMS MODAL ****
+.modal(data-js-clear-all-modal='')
+  // Modal content
+  .modalContent.modalContentCentered
+    header.modalContentHeader
+      h2 Clear All Items
+    p You Sure?!?
+    footer.modalContentFooter
+      button.modalBtn(data-js-clear-all-yes='') Yes
+      button.modalBtn(data-js-clear-all-no='') No
+// **** NO SHOPPING LIST ITEMS TO CLEAR MODAL ****
+.modal(data-js-no-items-modal='')
+  // Modal content
+  .modalContent.modalContentCentered
+    //
+      <header class="modalContentHeader">
+      <h2>There are no items to clear</h2>
+      </header>
+    p No items to clear
+    footer.modalContentFooter
+      button.modalBtn(data-js-no-items-close='') OK
+template#listItemTemplate
+  .listItem
+    input.sliCheckbox(type='checkbox')
+    label
+      span.custom-checkbox
+    .sliEdit(data-js-sli-edit='') Edit
+
+
+
+
+// **** SHOPPING LIST NEW ITEM MODAL ****
+.modal(data-js-add-item-modal='')
+  // Modal content
+  .modalContent
+    header.modalContentHeader
+      h2 New Item
+    form.modalForm(action='' data-js-add-item-form='new')
+      label.modalFormLabel(for='itemName') Name
+      input#itemName.modalFormInput(type='text' data-js-add-item-name='')
+      label.modalFormLabel(for='itemType') Type
+      select#itemType.modalFormInput(data-js-add-item-type='')
+        option(value='')
+        option(value='vegetable') Vegetable
+        option(value='fruit') Fruit
+        option(value='refrigerated') Refrigerated
+        option(value='drygoods') Dry Goods
+        option(value='bakery') Bakery
+        option(value='meat') Meat
+        option(value='fish') Fish
+        option(value='miscellaneous') Miscellaneous
+      label.modalFormLabel(for='itemQuantity') Quantity
+      input#itemQuantity.modalFormInput(type='number' value='1' min='1' data-js-add-item-quantity='')
+      label.modalFormLabel(for='itemUnits') Units (optional)
+      select#itemUnits.modalFormInput(data-js-add-item-units='')
+        | Units
+        option(value='')
+        option(value='teaspoon') tsp
+        option(value='tablespoon') tbsp
+        option(value='fluid ounce') fl oz
+        option(value='cup') c
+        option(value='gallon') gal
+        option(value='ounce') oz
+        option(value='pound') lb
+        option(value='bag') bag
+        option(value='box') box
+        option(value='can') can
+        option(value='jar') jar
+      footer.modalContentFooter
+        button.modalBtn Enter
+        button.modalBtn(data-js-add-item-close='') Close

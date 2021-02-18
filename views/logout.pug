@@ -1,0 +1,20 @@
+html
+  head
+    title Shopping Plan App
+    link(rel='stylesheet', href='/static/css/style.css')
+    script(defer, src='/static/scripts/logout.js')
+
+body.signInBkgd
+  div.signIn
+    div.modalContent
+      div.modalContentHeader
+        h1
+          | Are you sure you want to logout?
+      div
+        div.modalContentFooter
+          span
+            button.btn(data-js-nav-to-logged-out)
+              | Logout
+          span
+            button.btn(data-js-nav-to-dashboard)
+              | Return to Dashboard
